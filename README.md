@@ -31,9 +31,9 @@ For a detailed documentation of django-request, or how to install django-request
 ----------------------------------------------------
 2016-02-25 by recall  
 
-1. 修改记录
-    1.1 重命名 request 为 django-request
-    1.2 修改了代码内的引入方式
+1. 修改记录  
+    1.1 重命名 request 为 django-request  
+    1.2 修改了代码内的引入方式  
 
 2. 使用方法  
     2.1 复制 `django-request`到你的 项目下  
