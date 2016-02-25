@@ -28,17 +28,20 @@ For a detailed documentation of django-request, or how to install django-request
 
 
 
--------------------------------
+----------------------------------------------------
+2016-02-25 by recall  
 
-2016-02-25 by recall
-1.Change log  
-    rename request to django-request
+1. 修改记录
+    1.1 重命名 request 为 django-request
+    1.2 修改了代码内的引入方式
 
-2. Usage
-    2.1 copy django-request to your project path
-    2.2 Install the blog app by adding 'django-request' to INSTALLED_APPS.
-    2.3 Run `python manage.py migrate` so that Django will create the database tables.
-    2.4 Add `django-request.middleware.RequestMiddleware` to `MIDDLEWARE_CLASSES`. If you use `django.contrib.auth`, place RequestMiddleware after it. If you use `django.contrib.flatpages` place `django-request.middleware.RequestMiddleware` before it else flatpages will be marked as error pages in the admin panel.
-    2.5 Make sure that the domain name in django.contrib.sites admin is correct. This is used to calculate unique visitors and top referrers.
+2. 使用方法  
+    2.1 复制 `django-request`到你的 项目下
+    2.2 将 `django-request` 添加到 `INSTALL_APPS`中
+    2.3 运行 `python manage.py migrate`，生成数据库
+    2.4 添加 `django-request.middleware.RequestMiddleware` 到 `MIDDLEWARE_CLASSES`.
+        2.4.1 如果你在项目中使用了 `django.contrib.auth` 中间件，请把 `django-request.middleware.RequestMiddleware` 放在它后面.
+        2.4.2 如果你在项目中使用了 `django.contrib.flatpages` 中间件，请把 `django-request.middleware.RequestMiddleware` 放在它之前.
 
-Read More : https://django-request.readthedocs.org/en/latest/
+
+Read More : https://django-request.readthedocs.org/en/latest/  
