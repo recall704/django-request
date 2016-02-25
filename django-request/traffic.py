@@ -5,7 +5,7 @@ from time import mktime
 from django.db.models import Count
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import string_concat, ugettext
-from request import settings
+import settings as request_settings
 
 # Calculate the verbose_name by converting from InitialCaps to "lowercase with spaces".
 get_verbose_name = lambda class_name: re.sub('(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|$)))', ' \\1', class_name).strip()
@@ -17,7 +17,7 @@ class Modules(object):
         from django.core import exceptions
 
         self._modules = []
-        for module_path in settings.REQUEST_TRAFFIC_MODULES:
+        for module_path in request_settings.REQUEST_TRAFFIC_MODULES:
             try:
                 dot = module_path.rindex('.')
             except ValueError:
@@ -129,7 +129,7 @@ class UniqueVisit(Module):
     verbose_name_plural = _('Unique Visits')
 
     def count(self, qs):
-        return qs.exclude(referer__startswith=settings.REQUEST_BASE_URL).count()
+        return qs.exclude(referer__startswith=request_settings.REQUEST_BASE_URL).count()
 
 
 class UniqueVisitor(Module):

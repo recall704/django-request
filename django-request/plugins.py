@@ -4,9 +4,9 @@ import re
 from django.db.models import Count
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
-from request import settings
-from request.models import Request
-from request.traffic import modules
+import settings as request_settings
+from .models import Request
+from .traffic import modules
 
 # Calculate the verbose_name by converting from InitialCaps to "lowercase with spaces".
 get_verbose_name = lambda class_name: re.sub('(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|$)))', ' \\1', class_name).strip()
@@ -43,7 +43,7 @@ class Plugins(object):
         from django.core import exceptions
 
         self._plugins = []
-        for module_path in settings.REQUEST_PLUGINS:
+        for module_path in request_settings.REQUEST_PLUGINS:
             try:
                 dot = module_path.rindex('.')
             except ValueError:

@@ -67,7 +67,7 @@ HTTP_STATUS_CODES = (
     (510, _('Not Extended')),
 )
 
-from request.router import patterns
+from .router import patterns
 
 browsers = patterns(('Unknown', {}),
     # Browsers

@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('time', models.DateTimeField(auto_now_add=True, verbose_name='time')),
                 ('is_secure', models.BooleanField(default=False, verbose_name='is secure')),
                 ('is_ajax', models.BooleanField(default=False, help_text='Wheather this request was used via javascript.', verbose_name='is ajax')),
-                ('ip', models.IPAddressField(verbose_name='ip address')),
+                ('ip', models.GenericIPAddressField(verbose_name='ip address')),
                 ('referer', models.URLField(max_length=255, null=True, verbose_name='referer', blank=True)),
                 ('user_agent', models.CharField(max_length=255, null=True, verbose_name='user agent', blank=True)),
                 ('language', models.CharField(max_length=255, null=True, verbose_name='language', blank=True)),

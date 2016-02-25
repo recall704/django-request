@@ -7,9 +7,9 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.translation import ugettext_lazy as _
-from request.models import Request
-from request.plugins import *
-from request.traffic import modules
+from .models import Request
+from .plugins import *
+from .traffic import modules
 
 
 class RequestAdmin(admin.ModelAdmin):
