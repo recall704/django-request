@@ -25,3 +25,20 @@ Detailed documentation
 ----------------------
 
 For a detailed documentation of django-request, or how to install django-request please see: [django-request](https://django-request.readthedocs.org/en/latest/) or the docs/ directory.
+
+
+
+-------------------------------
+
+2016-02-25 by recall
+1.Change log  
+    rename request to django-request
+
+2. Usage
+    2.1 copy django-request to your project path
+    2.2 Install the blog app by adding 'django-request' to INSTALLED_APPS.
+    2.3 Run `python manage.py migrate` so that Django will create the database tables.
+    2.4 Add `django-request.middleware.RequestMiddleware` to `MIDDLEWARE_CLASSES`. If you use `django.contrib.auth`, place RequestMiddleware after it. If you use `django.contrib.flatpages` place `django-request.middleware.RequestMiddleware` before it else flatpages will be marked as error pages in the admin panel.
+    2.5 Make sure that the domain name in django.contrib.sites admin is correct. This is used to calculate unique visitors and top referrers.
+
+Read More : https://django-request.readthedocs.org/en/latest/
